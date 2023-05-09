@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Edge A Sketch</title>
+		<script>
+			const constructGrid = (num = 16) => {
+				let fullGrid = "";
+				for (let i = 0; i < num * num; i++) {
+					fullGrid += `<div class="grid" id="grid-${i + 1}"></div>`;
+				}
+				return fullGrid;
+			};
+		</script>
+		<script src="script.js" defer></script>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="btn-utils">
+			<button class="create" onclick="newGrid()">Change Size</button>
+			<button class="erase" onclick="eraseCell()">Erase</button>
+			<button class="clear" onclick="clearGrid()">Clear</button>
+		</div>
+		<div class="container">
+			<script>
+				document.write(constructGrid());
+			</script>
+		</div>
+	</body>
+</html>
